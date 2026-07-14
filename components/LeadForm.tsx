@@ -13,7 +13,7 @@ export default function LeadForm() {
   }
 
   return (
-    <form className="lead-form" onSubmit={submit}>
+    <form className="lead-form reveal tilt-card" onSubmit={submit}>
       <label>
         Nombre
         <input

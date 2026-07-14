@@ -21,8 +21,22 @@ export default function SiteHeader() {
     return () => window.removeEventListener('scroll', onScroll);
   }, []);
 
+  useEffect(() => {
+    document.body.classList.toggle('nav-lock', open);
+
+    const onKeyDown = (event: KeyboardEvent) => {
+      if (event.key === 'Escape') setOpen(false);
+    };
+
+    window.addEventListener('keydown', onKeyDown);
+    return () => {
+      document.body.classList.remove('nav-lock');
+      window.removeEventListener('keydown', onKeyDown);
+    };
+  }, [open]);
+
   return (
-    <header className={`site-header ${scrolled ? 'is-scrolled' : ''}`}>
+    <header className={`site-header ${scrolled ? 'is-scrolled' : ''} ${open ? 'menu-open' : ''}`}>
       <a href="#inicio" className="brand" aria-label="Terrenos Frente al Río, inicio">
         <img src="/brand/mark.svg" alt="" width="50" height="50" />
         <span>
@@ -34,7 +48,7 @@ export default function SiteHeader() {
       <button
         className="menu-button"
         type="button"
-        aria-label="Abrir menú"
+        aria-label={open ? 'Cerrar menú' : 'Abrir menú'}
         aria-expanded={open}
         onClick={() => setOpen((value) => !value)}
       >

@@ -1,5 +1,6 @@
 import SiteHeader from '@/components/SiteHeader';
 import LeadForm from '@/components/LeadForm';
+import DynamicEffects from '@/components/DynamicEffects';
 
 const amenities = [
   ['Fogatero', 'Un punto de encuentro para compartir tardes y noches al aire libre.', '✦'],
@@ -23,43 +24,44 @@ const gallery = [
 export default function Home() {
   return (
     <main>
+      <DynamicEffects />
       <SiteHeader />
 
       <section className="hero" id="inicio">
         <img className="hero-image" src="/images/rio-panorama.jpeg" alt="Río rodeado de vegetación en El Fuerte, Sinaloa" />
         <div className="hero-shade" />
         <div className="hero-grain" />
-        <div className="hero-content shell">
+        <div className="hero-content shell reveal hero-reveal">
           <p className="eyebrow light">El Fuerte · Sinaloa</p>
-          <h1>Tu espacio junto al río comienza aquí.</h1>
+          <h1>Tu historia frente al río comienza aquí.</h1>
           <p className="hero-copy">
-            Un desarrollo campestre en preventa para construir patrimonio, disfrutar la naturaleza y crear momentos en familia.
+            Un desarrollo ecoturístico en etapa de preventa para construir patrimonio, disfrutar la naturaleza y crear momentos en familia.
           </p>
           <div className="hero-actions">
             <a className="button primary" href="#contacto">Consultar disponibilidad</a>
             <a className="button ghost" href="#galeria">Conocer el entorno</a>
           </div>
         </div>
-        <div className="hero-facts" aria-label="Datos principales del proyecto">
+        <div className="hero-facts stagger-children" aria-label="Datos principales del proyecto">
           <div><span>Desde</span><strong>127 m²</strong></div>
-          <div><span>Referencia 200 m²</span><strong>$500,000</strong></div>
+          <div><span>200 m²</span><strong>$400,000</strong></div>
           <div><span>Apartado</span><strong>$20,000</strong></div>
           <div><span>Disponibles</span><strong>20 lotes</strong></div>
         </div>
       </section>
 
-      <section className="intro section" id="proyecto">
+      <section className="intro section reveal" id="proyecto">
         <div className="shell intro-grid">
           <div>
             <p className="eyebrow">Terrenos Frente al Río</p>
-            <h2>Un lugar pensado para vivir con más calma.</h2>
+            <h2>Un lugar pensado para vivir y convivir.</h2>
           </div>
           <div className="intro-copy">
             <p>
               A pocos pasos de un paisaje natural privilegiado, Terrenos Frente al Río reúne espacios de distintas superficies dentro de un proyecto de baja escala: solo 26 lotes en total.
             </p>
             <p>
-              La propuesta combina privacidad, contacto con la naturaleza y áreas de convivencia proyectadas para que cada propietario pueda imaginar su propio refugio en El Fuerte.
+              La propuesta combina privacidad, contacto con la naturaleza y áreas de convivencia proyectadas para que cada propietario pueda imaginar su propio escape en El Fuerte.
             </p>
             <div className="micro-note"><span /> Fotografías reales del entorno del proyecto.</div>
           </div>
@@ -68,11 +70,11 @@ export default function Home() {
 
       <section className="feature-story section">
         <div className="shell story-grid">
-          <figure className="story-image tall">
+          <figure className="story-image tall reveal tilt-card">
             <img src="/images/rio-vegetacion.jpeg" alt="Paisaje del río cubierto de vegetación" />
             <figcaption>Entorno natural · El Fuerte</figcaption>
           </figure>
-          <div className="story-panel">
+          <div className="story-panel reveal">
             <span className="section-number">01</span>
             <p className="eyebrow">Una inversión con sentido</p>
             <h2>Patrimonio, naturaleza y una ubicación para disfrutar.</h2>
@@ -81,7 +83,7 @@ export default function Home() {
             </p>
             <a className="text-link" href="#ubicacion">Explorar la ubicación <span>→</span></a>
           </div>
-          <figure className="story-image small">
+          <figure className="story-image small reveal tilt-card">
             <img src="/images/fauna.jpeg" alt="Ave entre los árboles del entorno" />
           </figure>
         </div>
@@ -89,7 +91,7 @@ export default function Home() {
 
       <section className="lots section" id="lotes">
         <div className="shell">
-          <div className="section-heading split-heading">
+          <div className="section-heading split-heading reveal">
             <div>
               <p className="eyebrow">Elige tu espacio</p>
               <h2>Superficies para distintos proyectos de vida.</h2>
@@ -99,23 +101,18 @@ export default function Home() {
             </p>
           </div>
 
-          <div className="lot-showcase">
-            <div className="lot-visual" aria-label="Representación visual de un lote de 10 por 20 metros">
-              <div className="measure top">10 m</div>
-              <div className="measure side">20 m</div>
-              <div className="lot-landscape">
-                <span className="mini-tree one">♣</span>
-                <span className="mini-tree two">♣</span>
-                <span className="mini-home">⌂</span>
-                <span className="mini-path" />
-              </div>
-              <div className="lot-label"><strong>200 m²</strong><span>Lote de referencia</span></div>
+          <div className="lot-showcase reveal">
+            <div className="lot-visual reference-map tilt-card">
+              <img
+                src="/images/mapa-de-referencia.png"
+                alt="Mapa de referencia del desarrollo Terrenos Frente al Río"
+              />
             </div>
 
-            <div className="lot-details">
+            <div className="lot-details reveal">
               <span className="pill">Preventa</span>
-              <h3>Terreno de referencia de 200 m²</h3>
-              <div className="price">$500,000 <small>MXN</small></div>
+              <h3>Terreno de 200 m² por solo:</h3>
+              <div className="price">$400,000 <small>MXN</small></div>
               <div className="detail-list">
                 <div><span>Superficies disponibles</span><strong>127 a 294 m²</strong></div>
                 <div><span>Apartado</span><strong>$20,000 MXN</strong></div>
@@ -123,14 +120,14 @@ export default function Home() {
                 <div><span>Condiciones de pago</span><strong>Consultar con asesor</strong></div>
               </div>
               <a className="button dark" href="#contacto">Solicitar cotización</a>
-              <p className="fine-print">Precio de referencia para terreno de 200 m². Superficies, precios y disponibilidad sujetos a confirmación.</p>
+              <p className="fine-print">Superficies, precios y disponibilidad sujetos a confirmación.</p>
             </div>
           </div>
         </div>
       </section>
 
       <section className="services-strip">
-        <div className="shell services-grid">
+        <div className="shell services-grid stagger-children">
           <div>
             <span>Servicios proyectados</span>
             <strong>Agua</strong>
@@ -143,14 +140,14 @@ export default function Home() {
 
       <section className="amenities section" id="amenidades">
         <div className="shell">
-          <div className="section-heading centered">
+          <div className="section-heading centered reveal">
             <p className="eyebrow">Amenidades proyectadas</p>
             <h2>Espacios que invitan a permanecer.</h2>
             <p>Una visión de convivencia sencilla, familiar y conectada con el paisaje.</p>
           </div>
-          <div className="amenity-grid">
+          <div className="amenity-grid stagger-children">
             {amenities.map(([title, description, icon], index) => (
-              <article className="amenity-card" key={title}>
+              <article className="amenity-card tilt-card" key={title}>
                 <span className="amenity-index">0{index + 1}</span>
                 <span className="amenity-icon" aria-hidden="true">{icon}</span>
                 <h3>{title}</h3>
@@ -162,7 +159,7 @@ export default function Home() {
       </section>
 
       <section className="legal section">
-        <div className="shell legal-card">
+        <div className="shell legal-card reveal tilt-card">
           <span className="legal-mark">§</span>
           <div>
             <p className="eyebrow">Seguridad jurídica</p>
@@ -173,16 +170,16 @@ export default function Home() {
 
       <section className="gallery section" id="galeria">
         <div className="shell">
-          <div className="section-heading split-heading">
+          <div className="section-heading split-heading reveal">
             <div>
               <p className="eyebrow">Galería</p>
               <h2>Conoce el entorno real.</h2>
             </div>
             <p>Imágenes tomadas en el terreno y sus alrededores.</p>
           </div>
-          <div className="gallery-grid">
+          <div className="gallery-grid stagger-children">
             {gallery.map(([src, alt], index) => (
-              <figure className={`gallery-item item-${index + 1}`} key={src}>
+              <figure className={`gallery-item item-${index + 1} tilt-card`} key={src}>
                 <img src={src} alt={alt} loading="lazy" />
                 <figcaption>{index < 3 ? 'Río y entorno' : 'Terreno actual'}</figcaption>
               </figure>
@@ -193,13 +190,12 @@ export default function Home() {
 
       <section className="location section" id="ubicacion">
         <div className="shell location-grid">
-          <div className="location-copy">
+          <div className="location-copy reveal">
             <p className="eyebrow">Ubicación</p>
             <h2>El Fuerte, Sinaloa.</h2>
             <p>
               Visita el lugar, recorre el entorno y conoce personalmente los lotes disponibles. Agenda una cita antes de acudir para recibir atención personalizada.
             </p>
-            <div className="coordinates">26°24&apos;36.2&quot;N · 108°38&apos;08.9&quot;W</div>
             <a
               className="button dark"
               href="https://maps.app.goo.gl/1EsKeYFa2zRpTgrV7"
@@ -209,7 +205,7 @@ export default function Home() {
               Abrir en Google Maps
             </a>
           </div>
-          <div className="map-wrap">
+          <div className="map-wrap reveal tilt-card">
             <iframe
               src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d2563.739714224435!2d-108.6358056!3d26.4100556!2m3!1f0!2f0!3f0!3m2!1i1024!1i768!4f13.1!3m2!1m1!2zMjbCsDI0JzM2LjIiTiAxMDjCsDM4JzA4LjkiVw!5e1!3m2!1ses!2smx!4v1783743083891!5m2!1ses!2smx"
               title="Ubicación de Terrenos Frente al Río"
@@ -225,7 +221,7 @@ export default function Home() {
         <img className="contact-bg" src="/images/rio-cercano.jpeg" alt="" />
         <div className="contact-overlay" />
         <div className="shell contact-grid">
-          <div className="contact-copy">
+          <div className="contact-copy reveal">
             <p className="eyebrow light">Da el siguiente paso</p>
             <h2>Agenda una visita y conoce tu próximo espacio.</h2>
             <p>Recibe información actualizada sobre lotes, superficies, disponibilidad y condiciones de pago.</p>

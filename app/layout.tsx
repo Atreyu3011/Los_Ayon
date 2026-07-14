@@ -4,12 +4,12 @@ import './globals.css';
 export const metadata: Metadata = {
   title: 'Terrenos Frente al Río | El Fuerte, Sinaloa',
   description:
-    'Lotes escriturables en preventa en El Fuerte, Sinaloa. Superficies de 127 m² a 294 m², rodeados de naturaleza y cerca del río.',
+    'Terrenos en preventa en El Fuerte, Sinaloa. Superficies de 127 m² a 294 m², rodeados de naturaleza y cerca del río.',
   keywords: [
     'terrenos El Fuerte',
     'lotes Sinaloa',
     'terrenos frente al río',
-    'terrenos escriturables',
+    'terrenos con escritura',
     'inversión inmobiliaria'
   ],
   openGraph: {
@@ -18,6 +18,10 @@ export const metadata: Metadata = {
     images: ['/images/rio-panorama.jpeg'],
     locale: 'es_MX',
     type: 'website'
+  },
+  icons: {
+    icon: [{ url: '/brand/mark.svg', type: 'image/svg+xml' }],
+    shortcut: ['/brand/mark.svg']
   }
 };
 
